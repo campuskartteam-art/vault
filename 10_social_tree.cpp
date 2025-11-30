@@ -56,3 +56,68 @@ int main() {
     return 0;
 }
 
+// ✅ Algorithm
+
+// Objective: Suggest friends to a user using BFS by finding all nodes at distance = 2 (friend-of-friend).
+// Input the number of users n.
+// Create an adjacency list graph to store connections.
+// Input friendships and store edges in the graph.
+// Ask for the user whose friends need to be suggested.
+// Run BFS starting from the given user:
+// Create array level[] initialized with −1 (unvisited).
+// Set level[start] = 0 and push start into queue.
+// While queue is not empty:
+// Pop front node u.
+// For each connected user v
+// If v is unvisited → set level[v] = level[u] + 1 and push v into queue.
+// After BFS completes:
+// Traverse level[] array.
+// If level[i] == 2, then i is suggested friend.
+// Display all suggested friends; if none found, print message.
+
+// 🧾 Pseudo-code
+
+// START
+
+// INPUT n   // number of users
+// CREATE graph as adjacency list of size n
+
+// FOR i = 1 TO n-1 DO
+//     INPUT u, v
+//     ADD v to graph[u]
+//     ADD u to graph[v]
+// END FOR
+
+// INPUT start  // user requesting suggestions
+
+// INITIALIZE level[1..n] with -1
+// CREATE empty queue q
+
+// SET level[start] = 0
+// ENQUEUE start into q
+
+// WHILE q is NOT empty DO
+//     u = DEQUEUE q
+//     FOR each friend v in graph[u] DO
+//         IF level[v] == -1 THEN
+//             SET level[v] = level[u] + 1
+//             ENQUEUE v into q
+//         END IF
+//     END FOR
+// END WHILE
+
+// PRINT "Friend suggestions for user start:"
+// found = FALSE
+
+// FOR i = 1 TO n DO
+//     IF level[i] == 2 THEN
+//         PRINT i
+//         found = TRUE
+//     END IF
+// END FOR
+
+// IF found == FALSE THEN
+//     PRINT "No suggestions available."
+
+// END
+
