@@ -97,3 +97,61 @@ int main()
 
 //     return 0;
 // }
+
+// ✅ Algorithm
+// Start
+// Read the input string expression
+// Create an empty stack
+// Traverse each character ch of the expression
+// If ch is an opening bracket ((, {, [), push it into stack
+// If ch is a closing bracket (), }, ]):
+// If stack is empty → return Invalid
+// Pop top element from stack
+// Check if popped opening bracket matches the closing bracket
+// If not matching → return Invalid
+// After traversal:
+// If stack is empty → expression is Balanced
+// Otherwise → expression is Unbalanced
+// Display result
+// End
+
+// 📝 Pseudocode
+
+// FUNCTION isBalanced(expr)
+//     CREATE empty stack st
+
+//     FOR each character ch in expr DO
+//         IF ch is '(' or '{' or '[' THEN
+//             PUSH ch into st
+//         ELSE IF ch is ')' or '}' or ']' THEN
+//             IF st is empty THEN
+//                 RETURN false
+//             END IF
+
+//             top = POP from st
+
+//             IF (ch == ')' AND top != '(') OR
+//                (ch == '}' AND top != '{') OR
+//                (ch == ']' AND top != '[') THEN
+//                 RETURN false
+//             END IF
+//         END IF
+//     END FOR
+
+//     IF st is empty THEN
+//         RETURN true
+//     ELSE
+//         RETURN false
+// END FUNCTION
+
+
+// MAIN
+//     INPUT expression
+
+//     IF isBalanced(expression) THEN
+//         PRINT "Valid Expression (Balanced Parentheses)"
+//     ELSE
+//         PRINT "Invalid Expression (Unbalanced Parentheses)"
+//     END IF
+// END MAIN
+
