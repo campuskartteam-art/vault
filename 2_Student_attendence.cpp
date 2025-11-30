@@ -67,3 +67,74 @@ int main() {
 
     return 0;
 }
+
+// ✅ Algorithm
+// Start
+// Input number of students → students
+// Input number of days → days
+// Input number of absences → absCount
+// Declare array A[100] to store absence records (student index, day index, student name)
+// For each absence record from 1 to absCount
+// Input student number, day number, and student name
+// Store in array A
+// Display sparse absence records (only absent students)
+// Display full attendance matrix (0 = present, 1 = absent)
+// Repeat for each student i from 0 to students−1
+// For each day j from 0 to days−1
+// Set absent = false
+// Compare each stored absence record
+// If record matches (student i , day j), set absent = true
+// Print 1 if absent else print 0
+// Initialize count = 0
+// Count how many students were absent on day 1 using loop
+// End
+
+// 📝 Pseudocode
+// START
+
+// INPUT students
+// INPUT days
+// INPUT absCount
+
+// DECLARE array A[100] of Absence (student, day, name)
+
+// PRINT "Enter absence records (student_no day_no student_name)"
+// FOR i = 0 TO absCount-1 DO
+//     READ A[i].student, A[i].day, A[i].name
+// END FOR
+
+// PRINT "===== Sparse Attendance (Only Absentees) ====="
+// FOR i = 0 TO absCount-1 DO
+//     PRINT "Student", A[i].student, "absent on Day", A[i].day, "->", A[i].name
+// END FOR
+
+// PRINT "===== Full Attendance Matrix ====="
+// PRINT "0 = Present | 1 = Absent"
+
+// FOR i = 0 TO students-1 DO
+//     FOR j = 0 TO days-1 DO
+//         SET absent = false
+
+//         FOR k = 0 TO absCount-1 DO
+//             IF A[k].student == i AND A[k].day == j THEN
+//                 absent = true
+//             END IF
+//         END FOR
+
+//         IF absent == true THEN
+//             PRINT "1 "
+//         ELSE
+//             PRINT "0 "
+//         END IF
+//     END FOR
+//     PRINT newline
+// END FOR
+
+// SET count = 0
+// FOR i = 0 TO students-1 DO
+//     IF A[i].day == 1 THEN
+//         count = count + 1
+//     END IF
+// END FOR
+
+// END
