@@ -61,3 +61,55 @@ int main() {
 
     return 0;
 }
+
+// 📌 Algorithm
+// Start
+// Input number of locations (nodes)
+// Create a graph using an adjacency list
+// Input number of delivery connections (edges)
+// For each edge:
+// Read u and v
+// Insert v into adjacency list of u
+// Insert u into adjacency list of v (undirected graph)
+// Input starting restaurant/location
+// Initialize a visited[] array of size n, all values = false
+// Call DFS(start):
+// Mark current node as visited
+// Print the node (delivery reached here)
+// For each neighbor of current node:
+// If not visited → recursively call DFS(neighbor)
+// Stop when all reachable locations are visited
+// End
+
+// 🧾 Pseudo Code
+
+// START
+
+// INPUT nodes
+// CREATE adjacency list adj[n]
+
+// INPUT edges
+// FOR i = 1 TO edges:
+//     INPUT u, v
+//     adj[u].append(v)
+//     adj[v].append(u)
+
+// FUNCTION DFS(start, visited[]):
+//     visited[start] = TRUE
+//     PRINT start
+    
+//     FOR each location next in adj[start]:
+//         IF visited[next] == FALSE THEN
+//             CALL DFS(next, visited)
+
+// FUNCTION showRoutes(start):
+//     INITIALIZE visited[n] = {FALSE}
+//     PRINT "Delivery Route from start:"
+//     CALL DFS(start, visited)
+
+// MAIN:
+//     INPUT start
+//     CALL showRoutes(start)
+
+// END
+
