@@ -173,3 +173,58 @@ int main() {
 
     return 0;
 }
+
+
+✅ Algorithm
+Initialization
+Start
+Create class Song with fields → name, prev, next
+Create class Playlist with pointers → head, tail, current
+Initialize head = tail = current = NULL
+
+Operation 1: Add Song
+Input songName
+Create new node newSong
+If playlist is empty (head == NULL)
+Set head = tail = current = newSong
+Else
+Set tail->next = newSong
+Set newSong->prev = tail
+Update tail = newSong
+Print "Song added"
+
+Operation 2: Delete Song
+Input songName
+Set pointer temp = head
+Search list until temp->name == songName OR temp == NULL
+If song not found → print "Song not found" and stop
+Else remove node:
+If deleting first node → update head = temp->next
+If deleting last node → update tail = temp->prev
+If middle node → link temp->prev->next = temp->next and temp->next->prev = temp->prev
+If current == temp → update current to next song if exists otherwise previous
+Delete temp
+Print "Song deleted"
+    
+Operation 3: Play Next Song
+If playlist empty (current == NULL) → print "Playlist empty"
+Else if current->next != NULL
+current = current->next
+Print "Playing current->name"
+Else print "Already at last song"
+
+Operation 4: Play Previous Song
+If playlist empty (current == NULL) → print "Playlist empty"
+Else if current->prev != NULL
+current = current->prev
+Print "Playing current->name"
+Else print "Already at first song"
+
+Operation 5: Display Playlist
+If head == NULL → print "Playlist empty"
+Else traverse from head to tail
+While traversing print song names
+Mark current song as [name]
+End Program
+Repeat menu until user chooses Exit
+Stop
