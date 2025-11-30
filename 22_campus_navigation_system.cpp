@@ -102,3 +102,69 @@ int main() {
 //         if(i) cout<<" -> ";
 //     }
 // }
+
+
+// 🔷 Algorithm (BFS Shortest Path Between Two Buildings)
+// Start
+// Store building connections in an adjacency list
+// Take start and end building indexes
+// Create:
+// visited[] array initialized to false
+// parent[] array initialized to –1
+// Empty queue q
+// Mark start as visited and push it into queue
+// While queue is not empty:
+// Pop cur from queue
+// If cur == end, stop BFS
+// For every neighbor next of cur:
+// If next not visited:
+// Mark visited
+// Set parent[next] = cur
+// Push next in queue
+// If end is not visited → no path exists
+// Else, reconstruct path by moving backward using parent[] from end to start
+// Print path in forward order
+// Stop
+
+// 🔷 Pseudocode
+// INPUT number of buildings n
+// STORE building names
+// CREATE adjacency list graph with n nodes
+
+// SET start = index of starting building
+// SET end = index of destination building
+
+// INITIALIZE visited[n] = false
+// INITIALIZE parent[n] = -1
+// CREATE empty queue q
+
+// visited[start] = true
+// q.enqueue(start)
+
+// WHILE q is not empty
+//     cur = q.dequeue()
+
+//     IF cur == end
+//         BREAK
+
+//     FOR each neighbor next in graph[cur]
+//         IF visited[next] == false
+//             visited[next] = true
+//             parent[next] = cur
+//             q.enqueue(next)
+// END WHILE
+
+// IF visited[end] == false
+//     PRINT "No path found"
+//     EXIT
+
+// CREATE empty list path
+// x = end
+// WHILE x != -1
+//     ADD x to path
+//     x = parent[x]
+
+// PRINT "Shortest Path:"
+// FOR i = path.last_index → 0
+//     PRINT building_name[path[i]]
+//     IF i != 0 PRINT " -> "
