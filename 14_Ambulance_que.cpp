@@ -55,3 +55,58 @@ int main() {
 
     return 0;
 }
+
+
+// ✅ Algorithm
+// Start
+// Create a max priority queue pq to store emergency cases
+// (Higher priority number → treated first)
+// Repeat until user chooses Exit:
+// Display menu
+// 1. Add Emergency Case
+// 2. Dispatch Next Ambulance
+// 3. Exit
+// Input user's choice
+// If choice = 1 (Add Case):
+// Input patient name and priority level
+// Create a Case object with (name, priority)
+// Insert it into the priority queue
+// Display "Case added"
+// If choice = 2 (Dispatch Case):
+// If priority queue is empty
+// → display "No emergency cases waiting"
+// Else
+// Remove highest-priority case (top element)
+// Display name and priority of dispatched case
+// If choice = 3
+// Exit program
+// End
+
+// 🧾 Pseudo-code
+
+// START
+
+// CREATE priority_queue pq   // stores Case objects (max priority first)
+
+// REPEAT
+//     DISPLAY menu
+//     INPUT choice
+
+//     IF choice = 1 THEN
+//         INPUT name
+//         INPUT priority
+//         CREATE Case (name, priority)
+//         INSERT Case into pq
+//         PRINT "Case added"
+
+//     ELSE IF choice = 2 THEN
+//         IF pq is empty THEN
+//             PRINT "No emergency cases waiting"
+//         ELSE
+//             REMOVE top Case from pq
+//             PRINT "Ambulance dispatched for case name and priority"
+//         END IF
+
+// UNTIL choice = 3
+
+// END
