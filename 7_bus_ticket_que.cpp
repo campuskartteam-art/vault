@@ -93,3 +93,94 @@ int main() {
 
     return 0;
 }
+
+// ✅ Algorithm (Step-by-Step)
+// Initialization
+// Start
+// Set front = -1, rear = -1
+// Create queue[SIZE]
+// Operation 1: Board Passenger
+// Input name
+// Check Queue Full condition:
+// If (rear + 1) % SIZE == front → Print "Queue Full" and stop
+// Else
+// If front == -1 → set front = 0 (first passenger)
+// Set rear = (rear + 1) % SIZE
+// Insert name at queue[rear]
+// Print "name boarded the bus"
+// Operation 2: Exit Passenger
+// Check Queue Empty condition:
+// If front == -1 → Print "Queue Empty" and stop
+// Else
+// Print "queue[front] exited the bus"
+// If front == rear → set front = rear = -1 (queue becomes empty)
+// Else → set front = (front + 1) % SIZE
+// Operation 3: Display Queue
+// If front == -1 → Print "No passengers in queue" and stop
+// Else
+// Set i = front
+// While i != rear
+// Print queue[i]
+// Set i = (i + 1) % SIZE
+// Print last element queue[rear]
+// Termination
+// Repeat operations until user chooses Exit (choice = 4)
+// Stop
+
+// 🧾 Pseudo Code
+
+// START
+// DECLARE queue[SIZE], front = -1, rear = -1
+
+// REPEAT
+//     DISPLAY menu
+//     INPUT choice
+
+//     CASE 1: // Board Passenger
+//         INPUT name
+//         IF (rear + 1) % SIZE == front THEN
+//             PRINT "Queue Full"
+//         ELSE
+//             IF front == -1 THEN
+//                 front = 0
+//             ENDIF
+//             rear = (rear + 1) % SIZE
+//             queue[rear] = name
+//             PRINT name + " boarded"
+//         ENDIF
+
+//     CASE 2: // Exit Passenger
+//         IF front == -1 THEN
+//             PRINT "Queue Empty"
+//         ELSE
+//             PRINT queue[front] + " exited"
+//             IF front == rear THEN
+//                 front = -1
+//                 rear = -1
+//             ELSE
+//                 front = (front + 1) % SIZE
+//             ENDIF
+//         ENDIF
+
+//     CASE 3: // Display Queue
+//         IF front == -1 THEN
+//             PRINT "No passengers in queue"
+//         ELSE
+//             i = front
+//             WHILE TRUE
+//                 PRINT queue[i]
+//                 IF i == rear THEN
+//                     BREAK
+//                 ENDIF
+//                 i = (i + 1) % SIZE
+//             ENDWHILE
+//         ENDIF
+
+//     CASE 4:
+//         PRINT "End of Simulation"
+
+//     DEFAULT:
+//         PRINT "Invalid Choice"
+// END REPEAT UNTIL choice == 4
+
+// STOP
