@@ -87,3 +87,69 @@ int main() {
         }
     }
 }
+
+
+
+// ✅ Algorithm (Short)
+
+// Initialize hashTable with -1.
+
+// Insert SKU
+
+// Compute index = SKU % SIZE
+
+// If slot empty → store SKU
+
+// Else → linear probe (index + 1) % SIZE until empty slot found
+
+// Search SKU
+
+// Compute index = SKU % SIZE
+
+// While slot not empty:
+
+// If SKU matches → found
+
+// Else probe next (index + 1) % SIZE
+
+// If loop completes → not found
+
+// Display
+
+// Print all hash table elements
+
+// Exit
+
+// Stop the program
+
+// 🔹 Pseudo Code (Short)
+// Initialize hashTable[i] = -1
+
+// REPEAT
+//   Print menu
+//   Input choice
+
+//   IF choice = 1 THEN        // Insert
+//       Input sku
+//       index = sku % SIZE
+//       WHILE hashTable[index] ≠ -1 DO
+//            index = (index + 1) % SIZE
+//       END WHILE
+//       hashTable[index] = sku
+
+//   ELSE IF choice = 2 THEN   // Search
+//       Input sku
+//       index = sku % SIZE
+//       start = index
+//       found = FALSE
+//       WHILE hashTable[index] ≠ -1 DO
+//            IF hashTable[index] = sku THEN found = TRUE; BREAK
+//            index = (index + 1) % SIZE
+//            IF index = start THEN BREAK
+//       END WHILE
+//       IF found THEN Print "Found" ELSE Print "Not found"
+
+//   ELSE IF choice = 3 THEN   // Display
+//       FOR i = 0 TO SIZE-1 PRINT hashTable[i]
+
+// UNTIL choice = 4    // Exit
